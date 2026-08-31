@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Screen → Phone</title><link rel="stylesheet" href="style.css">
+</head><body>
+<main>
+  <h1>Screen → Phone</h1>
+  <p class="muted">Share your PC screen and system audio to another browser.</p>
+  <section id="host">
+    <label>Room code</label>
+    <div class="row"><input id="room" maxlength="8" placeholder="e.g. ABC123"><button id="new">New code</button></div>
+    <button id="share" class="primary">Start sharing</button>
+    <p id="link"></p>
+    <p id="status">Not connected.</p>
+  </section>
+  <section id="viewer" hidden>
+    <p>Viewer mode — room <b id="roomText"></b></p>
+    <video id="video" autoplay playsinline controls></video>
+    <button id="sound">Enable sound</button>
+    <p id="vstatus">Connecting…</p>
+  </section>
+</main>
+<script src="app.js"></script>
+</body></html>
