@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0f14">
+  <title>Screen to Phone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div class="brand-mark" aria-hidden="true">↗</div>
+      <div>
+        <h1>نمایش صفحه روی گوشی</h1>
+        <p>تصویر و صدای سیستم را از کامپیوتر به گوشی بفرستید.</p>
+      </div>
+    </header>
+
+    <section id="home" class="card">
+      <h2>ساخت اتاق</h2>
+      <p class="muted">یک کد کوتاه بسازید و لینک آن را برای گوشی ارسال کنید.</p>
+
+      <label for="room">کد اتاق</label>
+      <div class="room-row">
+        <input id="room" maxlength="8" inputmode="text" autocomplete="off"
+               spellcheck="false" placeholder="مثلاً A7K2P9">
+        <button id="new" type="button">کد جدید</button>
+      </div>
+
+      <button id="share" class="primary" type="button">🖥️ شروع اشتراک‌گذاری</button>
+
+      <div id="shareHelp" class="notice" hidden></div>
+      <div id="linkBox" class="link-box" hidden>
+        <div class="small-label">لینک گوشی</div>
+        <a id="link" href="#" target="_blank" rel="noopener"></a>
+        <button id="copy" type="button" class="secondary">کپی لینک</button>
+      </div>
+
+      <p id="status" class="status" role="status" aria-live="polite">آماده</p>
+    </section>
+
+    <section id="viewer" class="card viewer-card" hidden>
+      <div class="viewer-head">
+        <div>
+          <div class="small-label">اتاق</div>
+          <strong id="roomText"></strong>
+        </div>
+        <span id="connectionBadge" class="badge">در حال اتصال</span>
+      </div>
+
+      <div class="video-wrap">
+        <video id="video" autoplay playsinline controls></video>
+        <div id="videoPlaceholder" class="video-placeholder">
+          <div class="spinner"></div>
+          <p>منتظر دریافت تصویر هستیم…</p>
+        </div>
+      </div>
+
+      <button id="sound" class="primary" type="button">🔊 فعال کردن صدا</button>
+      <button id="reconnect" class="secondary full" type="button">↻ تلاش برای اتصال مجدد</button>
+
+      <div id="vstatus" class="status" role="status" aria-live="polite">در حال اتصال به اتاق…</div>
+      <div id="viewerHelp" class="notice" hidden></div>
+    </section>
+
+    <section id="joinCard" class="card" hidden>
+      <h2>ورود به اتاق</h2>
+      <label for="joinRoom">کد اتاق</label>
+      <div class="room-row">
+        <input id="joinRoom" maxlength="8" inputmode="text" autocomplete="off"
+               spellcheck="false" placeholder="مثلاً A7K2P9">
+        <button id="join" type="button" class="primary">ورود</button>
+      </div>
+      <p id="joinStatus" class="status"></p>
+    </section>
+
+    <footer>
+      <span>WebRTC • اتصال مستقیم دستگاه‌ها</span>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

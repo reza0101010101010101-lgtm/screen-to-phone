@@ -1,0 +1,17 @@
+{
+  "name": "screen-to-phone",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Share a computer screen and supported system audio to a phone using WebRTC.",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "ws": "^8.18.0"
+  }
+}
